@@ -1,0 +1,10 @@
+#virtualbox
+wget -O- https://www.virtualbox.org/download/oracle_vbox_2016.asc | gpg --dearmor | sudo tee /usr/share/keyrings/virtualbox.gpg
+echo deb [arch=amd64 signed-by=/usr/share/keyrings/virtualbox.gpg] http://download.virtualbox.org/virtualbox/debian jammy contrib | sudo tee /etc/apt/sources.list.d/virtualbox.list
+apt install virtualbox-6.1 -y
+
+#epoptes
+apt-get remove epoptes-client
+add-apt-repository ppa:epoptes/ppa
+apt-get install epoptes-client
+systemctl status epoptes
